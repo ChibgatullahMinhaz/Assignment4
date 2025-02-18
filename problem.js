@@ -47,3 +47,18 @@ function electionResult(votes) {
     }
 }
 
+function  isBestFriend( f1 , f2 ) {
+   if (typeof f1 !== "object" || typeof f2 !== "object") {
+     return "Invalid";
+   }else if (Array.isArray(f1) && Array.isArray(f2)) {
+    return "Invalid";
+   }
+   if ( typeof f1.name  !== "string" || typeof f1.roll !== "number" || typeof f1.bestFriend !== "number" || typeof f2.name !== "string" || typeof f2.roll !== "number" || typeof f2.bestFriend !== "number") {
+    return "Invalid";
+   }
+   if (f1.roll === f2.bestFriend && f2.roll === f1.bestFriend) {
+    return true
+   }else{
+    return false;
+   }
+}
