@@ -18,7 +18,6 @@ function validEmail(email) {
     return false;
 }
 
-
 function electionResult(votes) {
     if (!Array.isArray(votes)) {
         return "Invalid";
@@ -64,8 +63,13 @@ function isBestFriend(f1, f2) {
 }
 
 function calculateWatchTime(times) {
-    if (!Array.isArray(times) || typeof times !== "number") {
+    if (!Array.isArray(times)) {
         return "Invalid";
+    }
+    for (let i = 0; i < times.length; i++) {
+        if ( typeof times[i] !== "number" ) {
+            return "Invalid";
+        }
     }
     let totalTimes = 0;
     for (const time of times) {
